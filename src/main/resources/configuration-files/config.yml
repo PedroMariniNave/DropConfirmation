@@ -1,0 +1,31 @@
+Settings:
+  expire-after: 15 # segundos
+
+Messages:
+  drop-again:
+    - ''
+    - '&eVocê realmente deseja dropar esse item?'
+    - '&ePara confirmar, drope-o novamente.'
+    - ''
+
+Sounds:
+  confirm:
+    enabled: true
+    sound: NOTE_PLING
+    volume: 1
+    pitch: 2
+
+Items:
+  1:
+    type: _PICKAXE
+  2:
+    enchants:
+      - LOOT_BONUS_MOBS
+  3:
+    type: DIAMOND_SWORD
+    name: '&6Espada Lendária'
+  4:
+    lore:
+      - '&7Lore de item VIP!'
+      - '&7Com essa lore você terá'
+      - '&7que confirmar o drop.'

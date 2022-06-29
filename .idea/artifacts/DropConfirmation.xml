@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="DropConfirmation">
+    <output-path>$USER_HOME$/Desktop/Pixel/plugins</output-path>
+    <root id="archive" name="DropConfirmation.jar">
+      <element id="module-output" name="DropConfirmation" />
+    </root>
+  </artifact>
+</component>
