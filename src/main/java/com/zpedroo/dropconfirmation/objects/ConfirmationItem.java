@@ -31,7 +31,7 @@ public class ConfirmationItem {
     }
 
     public boolean checkLore(@Nullable List<String> loreToCheck) {
-        if (lore == null) return true;
+        if (lore.isEmpty()) return true;
         if (loreToCheck == null) return false;
 
         return lore.containsAll(loreToCheck);

@@ -19,7 +19,7 @@ public class DataCache {
         FileUtils.Files file = FileUtils.Files.CONFIG;
         for (String str : FileUtils.get().getSection(file, "Items")) {
             String type = FileUtils.get().getString(file, "Items." + str + ".type", null);
-            String name = Colorize.getColored(FileUtils.get().getString(file, "Items." + str + ".name"));
+            String name = Colorize.getColored(FileUtils.get().getString(file, "Items." + str + ".name", null));
             List<String> lore = Colorize.getColored(FileUtils.get().getStringList(file, "Items." + str + ".lore"));
             List<Enchantment> enchantments = new ArrayList<>(2);
             for (String enchantmentName : FileUtils.get().getStringList(file, "Items." + str + ".enchants")) {
