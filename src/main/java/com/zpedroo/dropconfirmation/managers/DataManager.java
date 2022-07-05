@@ -27,6 +27,7 @@ public class DataManager {
             if (!confirmationItem.checkType(item.getType().toString())) continue;
             if (!confirmationItem.checkEnchantments(meta.getEnchants().keySet())) continue;
             if (!confirmationItem.checkName(meta.getDisplayName())) continue;
+            if (!confirmationItem.checkLore(meta.getLore())) continue;
 
             return confirmationItem;
         }

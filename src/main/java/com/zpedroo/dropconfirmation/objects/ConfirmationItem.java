@@ -24,19 +24,22 @@ public class ConfirmationItem {
     }
 
     public boolean checkName(@Nullable String nameToCheck) {
-        if (name == null || nameToCheck == null) return true;
+        if (name == null) return true;
+        if (nameToCheck == null) return false;
 
         return StringUtils.equals(name, nameToCheck);
     }
 
     public boolean checkLore(@Nullable List<String> loreToCheck) {
-        if (lore == null || loreToCheck == null) return true;
+        if (lore == null) return true;
+        if (loreToCheck == null) return false;
 
         return lore.containsAll(loreToCheck);
     }
 
     public boolean checkEnchantments(@NotNull Set<Enchantment> enchantmentsToCheck) {
-        if (enchantments.isEmpty() || enchantmentsToCheck.isEmpty()) return true;
+        if (enchantments.isEmpty()) return true;
+        if (enchantmentsToCheck.isEmpty()) return false;
 
         return enchantments.containsAll(enchantmentsToCheck);
     }
