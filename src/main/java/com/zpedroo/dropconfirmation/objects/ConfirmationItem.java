@@ -1,8 +1,10 @@
 package com.zpedroo.dropconfirmation.objects;
 
+import de.tr7zw.nbtapi.NBTItem;
 import lombok.Data;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -15,6 +17,7 @@ public class ConfirmationItem {
     private final String type;
     private final String name;
     private final List<String> lore;
+    private final List<String> nbtList;
     private final List<Enchantment> enchantments;
 
     public boolean checkType(@NotNull String typeToCheck) {
@@ -35,6 +38,17 @@ public class ConfirmationItem {
         if (loreToCheck == null) return false;
 
         return lore.containsAll(loreToCheck);
+    }
+
+    public boolean checkNBTs(@NotNull ItemStack item) {
+        if (nbtList.isEmpty()) return true;
+
+        NBTItem nbt = new NBTItem(item);
+        for (String nbtName : nbtList) {
+            if (!nbt.hasKey(nbtName)) return false;
+        }
+
+        return true;
     }
 
     public boolean checkEnchantments(@NotNull Set<Enchantment> enchantmentsToCheck) {

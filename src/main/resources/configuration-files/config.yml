@@ -24,6 +24,8 @@ Items:
   3:
     type: DIAMOND_SWORD
     name: '&6Espada Lendária'
+    nbt:
+      - 'LegendarySword'
   4:
     lore:
       - '&7Lore de item VIP!'

@@ -25,9 +25,10 @@ public class DataManager {
         ItemMeta meta = item.getItemMeta();
         for (ConfirmationItem confirmationItem : dataCache.getConfirmationItems()) {
             if (!confirmationItem.checkType(item.getType().toString())) continue;
-            if (!confirmationItem.checkEnchantments(meta.getEnchants().keySet())) continue;
             if (!confirmationItem.checkName(meta.getDisplayName())) continue;
             if (!confirmationItem.checkLore(meta.getLore())) continue;
+            if (!confirmationItem.checkNBTs(item)) continue;
+            if (!confirmationItem.checkEnchantments(meta.getEnchants().keySet())) continue;
 
             return confirmationItem;
         }

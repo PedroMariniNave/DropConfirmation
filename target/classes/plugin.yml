@@ -1,5 +1,0 @@
-name: DropConfirmation
-description: This plugin add confirmation to drop some items.
-version: 1.0
-author: zPedroo_
-main: com.zpedroo.dropconfirmation.DropConfirmation
